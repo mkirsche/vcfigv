@@ -32,7 +32,7 @@ public class Vcf2Screenshots
 	static void usage()
 	{
 		System.out.println("Usage: java -cp src Vcf2Screenshots [args]");
-		System.out.println("  Example: java -cp src Vcf2Screenshots aln=jhu004.sam var=snps.vcf genome=ref.fasta");
+		System.out.println("  Example: java -cp src Vcf2Screenshots aln=jhu004.bam var=snps.vcf genome=ref.fasta");
 		System.out.println();
 		System.out.println("Required args:");
 		System.out.println("  aln    (String) - a BAM file with the read alignments");
