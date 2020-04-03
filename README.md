@@ -1,5 +1,7 @@
 # vcfigv
 
+vcfigv allows the automated production of an IGV batch file from a VCF of SNPs and small indels, which enables the creation of screenshots surrounding each of the variants in the file.
+
 ## Compilation
 
 ``javac src/*.java``
