@@ -10,8 +10,8 @@ vcfigv allows the automated production of an IGV batch file from a VCF of SNPs a
 ## Running
 
 ```
-Usage: java -cp src Vcf2Screenshots [args]
-  Example: java -cp src Vcf2Screenshots aln=jhu004.bam var=snps.vcf genome=ref.fasta
+Usage: java -cp src Vcf2Bat [args]
+  Example: java -cp src Vcf2Bat aln=jhu004.bam var=snps.vcf genome=ref.fasta
 
 Required args:
   aln    (String) - a BAM file with the read alignments
