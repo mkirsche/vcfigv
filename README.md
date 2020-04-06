@@ -25,3 +25,12 @@ Optional args:
   ```
   
 Then, in IGV (v1.5+), click on Tools->Run Batch Script, and select the generated batch script igv.bat from the working directory.
+
+## Generating screenshots from the command line
+
+To run the batch script from the command line instead of the IGV interface, an off-screen server such as xvfb is required.  The following commands show how to do this:
+
+```
+sudo apt-get install xvfb
+xvfb-run --auto-servernum PATH_TO/igv.sh -b BATCH_FILE
+```
