@@ -1,0 +1,14 @@
+new
+genome /home/mkirsche/references.fasta
+load /home/mkirsche/ncov/data/none-nCoV2019_Wuhan-Hu-1_MN908947_China_Wuhan_2019-12.fastq.primertrimmed.sorted.bam
+snapshotDirectory /home/mkirsche/ncov/data/igv
+
+goto nCoV2019|Wuhan-Hu-1|MN908947|China|Wuhan|2019-12:12900-13000
+sort position
+collapse
+snapshot
+
+goto nCoV2019|Wuhan-Hu-1|MN908947|China|Wuhan|2019-12:28831-28931
+sort position
+collapse
+snapshot
