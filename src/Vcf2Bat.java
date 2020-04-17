@@ -27,13 +27,16 @@ public class Vcf2Bat
 	// Whether or not to combine nearby variants into a single screenshot
 	static boolean combineNearby = true;
 	
+	// Whether or not to squish the view before snapshotting
+	static boolean squish = false;
+	
 	/*
 	 * Prints out usage instructions
 	 */
 	static void usage()
 	{
-		System.out.println("Usage: java -cp src Vcf2Screenshots [args]");
-		System.out.println("  Example: java -cp src Vcf2Screenshots aln=jhu004.bam var=snps.vcf genome=ref.fasta");
+		System.out.println("Usage: java -cp src Vcf2Bat [args]");
+		System.out.println("  Example: java -cp src Vcf2Bat aln=jhu004.bam var=snps.vcf genome=ref.fasta");
 		System.out.println();
 		System.out.println("Required args:");
 		System.out.println("  aln    (String) - a BAM file with the read alignments");
@@ -45,7 +48,7 @@ public class Vcf2Bat
 		System.out.println("  padding      (int)    [50]     - the number of bases on each side of the variant to include");
 		System.out.println("  outprefix (String)    [igv]    - the name of the directory to put screenshots into");
 		System.out.println("  --nocombine                    - don't combine nearby variants into single screenshots");
-
+		System.out.println("  --squish                       - squish the screenshots to capture more reads");
 
 		System.out.println();
 	}
@@ -65,6 +68,10 @@ public class Vcf2Bat
 				if(s.endsWith("nocombine"))
 				{
 					combineNearby = false;
+				}
+				if(s.endsWith("squish"))
+				{
+					squish = true;
 				}
 			}
 			else
@@ -181,6 +188,12 @@ public class Vcf2Bat
 			out.println("goto " + v.chr + ":" + window[0] + "-" + window[1]);
 			out.println("sort position");
 			out.println("collapse");
+			
+			if(squish)
+			{
+				out.println("squish");
+			}
+			
 			out.println("snapshot " + v.getId() + ".png");
 		}
 		out.println("exit");
@@ -238,7 +251,7 @@ public class Vcf2Bat
 		int[] window()
 		{
 			return new int[] { Math.max(1, pos - padding), pos + refLen + padding};
-		}
+		}	
 		boolean overlaps(Variant v)
 		{
 			if(!v.chr.equals(chr)) return false;
