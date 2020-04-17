@@ -22,6 +22,8 @@ Optional args:
   padding      (int)    [50]     - the number of bases on each side of the variant to include
   outprefix (String)    [igv]    - the name of the directory to put screenshots into
   --nocombine                    - don't combine nearby variants into single screenshots
+  --squish                       - squish the screenshots to capture more reads
+
   ```
   
 Then, in IGV (v1.5+), click on Tools->Run Batch Script, and select the generated batch script igv.bat from the working directory.
