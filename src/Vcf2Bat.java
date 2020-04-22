@@ -30,6 +30,9 @@ public class Vcf2Bat
 	// Whether or not to squish the view before snapshotting
 	static boolean squish = false;
 	
+	// Whether or not to output to an svg file instead of a png
+	static boolean svg = false;
+	
 	/*
 	 * Prints out usage instructions
 	 */
@@ -49,6 +52,7 @@ public class Vcf2Bat
 		System.out.println("  outprefix (String)    [igv]    - the name of the directory to put screenshots into");
 		System.out.println("  --nocombine                    - don't combine nearby variants into single screenshots");
 		System.out.println("  --squish                       - squish the screenshots to capture more reads");
+		System.out.println("  --svg                          - output the snapshot to svg files instead of png files");
 
 		System.out.println();
 	}
@@ -72,6 +76,10 @@ public class Vcf2Bat
 				if(s.endsWith("squish"))
 				{
 					squish = true;
+				}
+				if(s.endsWith("svg"))
+				{
+					svg = true;
 				}
 			}
 			else
@@ -194,7 +202,7 @@ public class Vcf2Bat
 				out.println("squish");
 			}
 			
-			out.println("snapshot " + v.getId() + ".png");
+			out.println("snapshot " + v.getId() + (svg ? ".svg" : ".png"));
 		}
 		out.println("exit");
 		
