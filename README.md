@@ -23,6 +23,7 @@ Optional args:
   outprefix (String)    [igv]    - the name of the directory to put screenshots into
   --nocombine                    - don't combine nearby variants into single screenshots
   --squish                       - squish the screenshots to capture more reads
+  --svg                          - output the snapshot to svg files instead of png files
 
   ```
   
