@@ -52,7 +52,7 @@ public class Vcf2Bat
 		System.out.println("  outprefix (String)    [igv]    - the name of the directory to put screenshots into");
 		System.out.println("  --nocombine                    - don't combine nearby variants into single screenshots");
 		System.out.println("  --squish                       - squish the screenshots to capture more reads");
-		System.out.println("  --svg                          - output the snapshot to svg files instead of png files");
+		System.out.println("  --svg                          - output the snapshots to svg files instead of png files");
 
 		System.out.println();
 	}
